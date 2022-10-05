@@ -53,6 +53,7 @@ const getWeatherDataFromApi = async () => {
   const lang = "tr";
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}&lang=${lang}`;
+
   $.ajax({
     type: "GET",
     url: url,
@@ -114,8 +115,12 @@ const getWeatherDataFromApi = async () => {
       //   // $(e.target).attr("src", iconUrlAWS);
       // });
 
-      $(".city").click((e) => {
-        $(e.target).animate({ left: "250px" });
+      // $(".city").click((e) => {
+      //   $(e.target).animate({ left: "250px" });
+      // });
+      //hide() vs show()
+      $(".city img").click((e) => {
+        $(e.target).hide();
       });
 
       // formJS.reset(); js de ki çalışıyor.
