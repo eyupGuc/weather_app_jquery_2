@@ -36,3 +36,5 @@ formJquery.submit((e) => {
 const getWeatherDataFromApi = () => {
   console.log("AJAX Func is called");
 };
+
+// XMLHTTPREQUEST(xhr) vs. fetch() vs. axios vs. $.ajax //! bu 4 farklı yöntemle api ye veri gönderip çekebiliriz.
