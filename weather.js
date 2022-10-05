@@ -16,5 +16,9 @@ console.log(inputJQ);
 //addEventListener==>on
 
 $(window).on("load", () => {
-  console.log("window.load");
+  console.log("window.loaded");
+});
+
+$(document).ready(() => {
+  console.log("DOMContentLoaded");
 });
