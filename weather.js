@@ -107,9 +107,15 @@ const getWeatherDataFromApi = async () => {
 
       //append ve prepend jq ile çalışıyor.
       listJQ.prepend(createdLi);
-      $(".city img").click((e) => {
-        //getAttribute
-        $(e.target).attr("src", iconUrlAWS);
+      //Jquery samples
+      // $(".city img").click((e) => {
+      //   //getAttribute
+      //   window.location.href = $(e.target).attr("src");
+      //   // $(e.target).attr("src", iconUrlAWS);
+      // });
+
+      $(".city").click((e) => {
+        $(e.target).animate({ left: "250px" });
       });
 
       // formJS.reset(); js de ki çalışıyor.
