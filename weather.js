@@ -80,7 +80,8 @@ const getWeatherDataFromApi = async () => {
 
       //append ve prepend jq ile çalışıyor.
       listJQ.prepend(createdLi);
-      formJS.reset();
+      // formJS.reset(); js de ki çalşıyor.
+      formJquery.trigger("reset"); // reset form eventidir.
     },
     beforeSend: (request) => {
       console.log("before ajax send");
