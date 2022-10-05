@@ -58,6 +58,15 @@ const getWeatherDataFromApi = async () => {
     success: (response) => {
       console.log(response);
       const { main, sys, name, weather } = response;
+
+      const iconUrlAWS = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`;
+      //alternative iconUrl
+      const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+
+      // const createdLi= document.createElement("li");   created element in JS.
+
+      // const createdLi=$(document.createElement("li")); altarnatif jQuery
+      const createdLi = $("<li></li>");
     },
     beforeSend: (request) => {
       console.log("before ajax send");
