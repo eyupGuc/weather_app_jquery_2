@@ -81,7 +81,7 @@ const getWeatherDataFromApi = async () => {
           msgJQ.text(
             `You already know the weather for ${name}, Please search for another city 😉`
           );
-          msgJQ.css({ color: "red" });
+          msgJQ.css({ color: "red", "text-decoration": "underline" });
           return;
         }
       }
