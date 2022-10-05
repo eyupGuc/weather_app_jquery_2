@@ -8,7 +8,7 @@ const formJquery = jQuery("form").eq(0);
 const listJQ = $(".cities").eq(0);
 // console.log(formJS);
 // console.log(formJquery);
-console.log(inputJQ);
+// console.log(inputJQ);
 // get(index), eq(index)
 
 // window.onload=()=>{} ==> JS
@@ -22,3 +22,17 @@ $(window).on("load", () => {
 $(document).ready(() => {
   console.log("DOMContentLoaded");
 });
+// formJquery.on("submit", (e) => { 1. kullanım
+//   e.preventDefault();
+//   getWeatherDataFromApi();
+// });
+
+formJquery.submit((e) => {
+  // 2. kulllanım
+  e.preventDefault();
+  getWeatherDataFromApi();
+});
+
+const getWeatherDataFromApi = () => {
+  console.log("AJAX Func is called");
+};
