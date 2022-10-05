@@ -117,10 +117,11 @@ const getWeatherDataFromApi = async () => {
       console.log("after ajax send");
     },
     error: (XMLHttpRequest) => {
-      // console.log(XMLHttpRequest);
-      msgJQ.text(
-        `${XMLHttpRequest.status} ${XMLHttpRequest.text} ${responseJSON.message}`
-      );
+      //logging
+      //postErrorLog(p1,p2,p3,p4);
+      console.log(XMLHttpRequest);
+      msgJQ.text(`${XMLHttpRequest.status} ${XMLHttpRequest.statusText}`);
+      //styling
       msgJQ.css({ color: "red", "text-decoration": "underline" });
     },
   });
