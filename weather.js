@@ -77,6 +77,10 @@ const getWeatherDataFromApi = async () => {
                 <img class="city-icon" src="${iconUrl}">
                 <figcaption>${weather[0].description}</figcaption>
             </figure>`);
+
+      //append ve prepend jq ile çalışıyor.
+      listJQ.prepend(createdLi);
+      formJS.reset();
     },
     beforeSend: (request) => {
       console.log("before ajax send");
