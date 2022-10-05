@@ -43,11 +43,19 @@ formJquery.submit((e) => {
 const getWeatherDataFromApi = () => {
   console.log("AJAX Func is called");
   const apiKey = DecryptStringAES(localStorage.getItem("apiKey"));
-  console.log(apiKey);
+
+  //? JS.value=jQuery.val()
+  //   console.log(apiKey);
   const cityName = inputJQ.val();
   console.log(cityName);
+  const units = "metric";
+  const lang = "tr";
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}&lang=${lang}`;
+$.ajax({
+    type:
+});
+
 };
 
 // XMLHTTPREQUEST(xhr) vs. fetch() vs. axios vs. $.ajax //! bu 4 farklı yöntemle api ye veri gönderip çekebiliriz.
