@@ -68,6 +68,15 @@ const getWeatherDataFromApi = async () => {
       // const createdLi=$(document.createElement("li")); altarnatif jQuery
       const createdLi = $("<li></li>");
       createdLi.addClass("city");
+      createdLi.html(`<h2 class="city-name" data-name="${name}, ${sys.country}">
+                <span>${name}</span>
+                <sup>${sys.country}</sup>
+            </h2>
+            <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+            <figure>
+                <img class="city-icon" src="${iconUrl}">
+                <figcaption>${weather[0].description}</figcaption>
+            </figure>`);
     },
     beforeSend: (request) => {
       console.log("before ajax send");
