@@ -10,3 +10,11 @@ const listJQ = $(".cities").eq(0);
 // console.log(formJquery);
 console.log(inputJQ);
 // get(index), eq(index)
+
+// window.onload=()=>{} ==> JS
+
+//addEventListener==>on
+
+$(window).on("load", () => {
+  console.log("window.load");
+});
