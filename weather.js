@@ -71,6 +71,11 @@ const getWeatherDataFromApi = async () => {
       //const cityCardList = listJQ.querySelector(".city"); js de kartları yakalama
       const cityCardList = listJQ.find(".city");
       console.log(cityCardList);
+      // bu kart listesini array listesine çevirmek gerekiyor.
+      const cityCardListArray = cityCardList.get();
+      if (cityCardListArray.length > 0) {
+        const filteredArray = cityCardListArray.filter();
+      }
 
       const createdLi = $("<li></li>");
       createdLi.addClass("city");
