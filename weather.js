@@ -7,7 +7,7 @@ const msgJQ = $(".top-banner span").eq(0);
 const formJquery = jQuery("form").eq(0);
 const listJQ = $(".cities").eq(0);
 const msg = document.querySelector("span.msg");
-console.log(msg);
+// console.log(msg);
 // console.log(formJS);
 // console.log(formJquery);
 // console.log(inputJQ);
@@ -18,11 +18,11 @@ console.log(msg);
 //addEventListener==>on
 
 $(window).on("load", () => {
-  console.log("window.loaded");
+  // console.log("window.loaded");
 });
 
 $(document).ready(() => {
-  console.log("DOMContentLoaded");
+  // console.log("DOMContentLoaded");
   localStorage.setItem(
     "apiKey",
     EncryptStringAES("e815a95d20a585101c219591fd494992")
@@ -107,7 +107,12 @@ const getWeatherDataFromApi = async () => {
 
       //append ve prepend jq ile çalışıyor.
       listJQ.prepend(createdLi);
-      // formJS.reset(); js de ki çalşıyor.
+      $(".city img").click((e) => {
+        //getAttribute
+        $(e.target).attr("src", iconUrlAWS);
+      });
+
+      // formJS.reset(); js de ki çalışıyor.
       formJquery.trigger("reset"); // reset form eventidir.
     },
     beforeSend: (request) => {
