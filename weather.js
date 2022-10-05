@@ -23,9 +23,7 @@ $(document).ready(() => {
   console.log("DOMContentLoaded");
   localStorage.setItem(
     "apiKey",
-    EncryptStringAES(
-      "ZYNX66XobmAnf4vSOggcns5uv50j2sURYncHR3AzFuEZ1ri0F72WUsbX4etiigMw6CXZYCYMvy2OaXXPWuQyQQSaTiTsaFjzrKpVUlQAnUZIScKQZ2WH0k7/Spo2mr1QNz0m7V4Iz32W9y6oYNFG/g=="
-    )
+    EncryptStringAES("e815a95d20a585101c219591fd494992")
   );
 });
 
@@ -40,7 +38,7 @@ formJquery.submit((e) => {
   getWeatherDataFromApi();
 });
 //"e815a95d20a585101c219591fd494992"; //
-const getWeatherDataFromApi = () => {
+const getWeatherDataFromApi = async () => {
   console.log("AJAX Func is called");
   const apiKey = DecryptStringAES(localStorage.getItem("apiKey"));
   console.log(apiKey);
@@ -59,6 +57,7 @@ const getWeatherDataFromApi = () => {
     dataType: "json",
     success: (response) => {
       console.log(response);
+      const { main, sys, name, weather } = response;
     },
     beforeSend: (request) => {
       console.log("before ajax send");
