@@ -74,7 +74,9 @@ const getWeatherDataFromApi = async () => {
       // bu kart listesini array listesine çevirmek gerekiyor.
       const cityCardListArray = cityCardList.get();
       if (cityCardListArray.length > 0) {
-        const filteredArray = cityCardListArray.filter();
+        const filteredArray = cityCardListArray.filter((li) => {
+          $(li).find("span").text() == name;
+        });
       }
 
       const createdLi = $("<li></li>");
