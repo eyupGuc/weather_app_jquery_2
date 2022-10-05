@@ -44,6 +44,10 @@ const getWeatherDataFromApi = () => {
   console.log("AJAX Func is called");
   const apiKey = DecryptStringAES(localStorage.getItem("apiKey"));
   console.log(apiKey);
+  const cityName = inputJQ.val();
+  console.log(cityName);
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
 };
 
 // XMLHTTPREQUEST(xhr) vs. fetch() vs. axios vs. $.ajax //! bu 4 farklı yöntemle api ye veri gönderip çekebiliriz.
