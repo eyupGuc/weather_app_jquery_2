@@ -6,6 +6,8 @@ const inputJQ = $(".top-banner input").eq(0);
 const msgJQ = $(".top-banner span").eq(0);
 const formJquery = jQuery("form").eq(0);
 const listJQ = $(".cities").eq(0);
+const msg = document.querySelector("span.msg");
+console.log(msg);
 // console.log(formJS);
 // console.log(formJquery);
 // console.log(inputJQ);
@@ -78,6 +80,11 @@ const getWeatherDataFromApi = async () => {
           (li) => $(li).find("span").text() == name
         );
         if (filteredArray.length > 0) {
+          // msg.innerText =
+          //   msg.innerText = `You already know the weather for ${name}, Please search for another city 😉`;
+          // setTimeout(() => {
+          //   msg.innerText = "";
+          // }, 5000);
           msgJQ.text(
             `You already know the weather for ${name}, Please search for another city 😉`
           );
@@ -110,7 +117,11 @@ const getWeatherDataFromApi = async () => {
       console.log("after ajax send");
     },
     error: (XMLHttpRequest) => {
-      console.log(XMLHttpRequest);
+      // console.log(XMLHttpRequest);
+      msgJQ.text(
+        `${XMLHttpRequest.status} ${XMLHttpRequest.text} ${responseJSON.message}`
+      );
+      msgJQ.css({ color: "red", "text-decoration": "underline" });
     },
   });
 };
