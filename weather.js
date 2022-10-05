@@ -66,6 +66,8 @@ const getWeatherDataFromApi = async () => {
       // const createdLi= document.createElement("li");   created element in JS.
 
       // const createdLi=$(document.createElement("li")); altarnatif jQuery
+      // weather card control
+
       const createdLi = $("<li></li>");
       createdLi.addClass("city");
       createdLi.html(`<h2 class="city-name" data-name="${name}, ${sys.country}">
