@@ -21,7 +21,14 @@ $(window).on("load", () => {
 
 $(document).ready(() => {
   console.log("DOMContentLoaded");
+  localStorage.setItem(
+    "apiKey",
+    EncryptStringAES(
+      "qHxuptpLNG3ry0nVTlXqBFeeSAy4z/idGQyvFEzrj5bn+pbyoHyuArL+hW1ov03F"
+    )
+  );
 });
+
 // formJquery.on("submit", (e) => { 1. kullanım
 //   e.preventDefault();
 //   getWeatherDataFromApi();
@@ -35,6 +42,8 @@ formJquery.submit((e) => {
 
 const getWeatherDataFromApi = () => {
   console.log("AJAX Func is called");
+  const apiKey = DecryptStringAES(localStorage.getItem("apiKey"));
+  console.log(apiKey);
 };
 
 // XMLHTTPREQUEST(xhr) vs. fetch() vs. axios vs. $.ajax //! bu 4 farklı yöntemle api ye veri gönderip çekebiliriz.
