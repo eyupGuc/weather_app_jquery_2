@@ -24,7 +24,7 @@ $(document).ready(() => {
   localStorage.setItem(
     "apiKey",
     EncryptStringAES(
-      "qHxuptpLNG3ry0nVTlXqBFeeSAy4z/idGQyvFEzrj5bn+pbyoHyuArL+hW1ov03F"
+      "ZYNX66XobmAnf4vSOggcns5uv50j2sURYncHR3AzFuEZ1ri0F72WUsbX4etiigMw6CXZYCYMvy2OaXXPWuQyQQSaTiTsaFjzrKpVUlQAnUZIScKQZ2WH0k7/Spo2mr1QNz0m7V4Iz32W9y6oYNFG/g=="
     )
   );
 });
@@ -39,10 +39,11 @@ formJquery.submit((e) => {
   e.preventDefault();
   getWeatherDataFromApi();
 });
-
+//"e815a95d20a585101c219591fd494992"; //
 const getWeatherDataFromApi = () => {
   console.log("AJAX Func is called");
   const apiKey = DecryptStringAES(localStorage.getItem("apiKey"));
+  console.log(apiKey);
 
   //? JS.value=jQuery.val()
   //   console.log(apiKey);
@@ -52,10 +53,23 @@ const getWeatherDataFromApi = () => {
   const lang = "tr";
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}&lang=${lang}`;
-$.ajax({
-    type:
-});
-
+  $.ajax({
+    type: "GET",
+    url: url,
+    dataType: "json",
+    success: (response) => {
+      console.log(response);
+    },
+    beforeSend: (request) => {
+      console.log("before ajax send");
+    },
+    complete: () => {
+      console.log("after ajax send");
+    },
+    error: (XMLHttpRequest) => {
+      console.log(XMLHttpRequest);
+    },
+  });
 };
 
 // XMLHTTPREQUEST(xhr) vs. fetch() vs. axios vs. $.ajax //! bu 4 farklı yöntemle api ye veri gönderip çekebiliriz.
